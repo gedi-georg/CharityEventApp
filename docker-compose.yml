@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  # db:
+  #   image: postgres:16
+  #   container_name: charity_postgres
+  #   environment:
+  #     POSTGRES_DB: mydb
+  #     POSTGRES_USER: myuser
+  #     POSTGRES_PASSWORD: parool123
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+    container_name: charity_app
+    environment:
+      DB_HOST: db
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - "5000:80"
+    # depends_on:
+    #   - db
+
+volumes:
+  pgdata:

@@ -1,0 +1,65 @@
+[
+  {
+    "Id": 1,
+    "Name": "Brownie",
+    "Price": 0.65,
+    "Quantity": 48,
+    "Category": "Edible"
+  },
+  {
+    "Id": 2,
+    "Name": "Muffin",
+    "Price": 1.00,
+    "Quantity": 36,
+    "Category": "Edible"
+  },
+  {
+    "Id": 3,
+    "Name": "Cake Pop",
+    "Price": 1.35,
+    "Quantity": 24,
+    "Category": "Edible"
+  },
+  {
+    "Id": 4,
+    "Name": "Apple Tart",
+    "Price": 1.50,
+    "Quantity": 60,
+    "Category": "Edible"
+  },
+  {
+    "Id": 5,
+    "Name": "Water",
+    "Price": 1.50,
+    "Quantity": 30,
+    "Category": "Edible"
+  },
+  {
+    "Id": 6,
+    "Name": "Shirt",
+    "Price": 2.00,
+    "Quantity": 0,
+    "Category": "SecondHand"
+  },
+  {
+    "Id": 7,
+    "Name": "Pants",
+    "Price": 3.00,
+    "Quantity": 0,
+    "Category": "SecondHand"
+  },
+  {
+    "Id": 8,
+    "Name": "Jacket",
+    "Price": 4.00,
+    "Quantity": 0,
+    "Category": "SecondHand"
+  },
+  {
+    "Id": 9,
+    "Name": "Toy",
+    "Price": 1.00,
+    "Quantity": 0,
+    "Category": "SecondHand"
+  }
+]
