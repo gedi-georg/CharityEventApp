@@ -28,12 +28,12 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Apply pending migrations on startup
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();  // Applies any pending migrations automatically
-    DatabaseSeeder.SeedProducts(app);  // Seed the database with products
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+//    db.Database.Migrate();  // Applies any pending migrations automatically
+//    DatabaseSeeder.SeedProducts(app);  // Seed the database with products
+//}
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
