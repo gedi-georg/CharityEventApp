@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharityEventApp", "CharityEventApp.csproj", "{D41DA9DC-322F-44BE-8337-3DFC5C5D634D}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactapp", "..\ReactApp\reactapp.esproj", "{F8F953FE-FA32-49E0-B125-E9FF87A41222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{D41DA9DC-322F-44BE-8337-3DFC5C5D634D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D41DA9DC-322F-44BE-8337-3DFC5C5D634D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D41DA9DC-322F-44BE-8337-3DFC5C5D634D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F953FE-FA32-49E0-B125-E9FF87A41222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F953FE-FA32-49E0-B125-E9FF87A41222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F953FE-FA32-49E0-B125-E9FF87A41222}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F8F953FE-FA32-49E0-B125-E9FF87A41222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F953FE-FA32-49E0-B125-E9FF87A41222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F953FE-FA32-49E0-B125-E9FF87A41222}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

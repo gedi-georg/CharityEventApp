@@ -1,12 +1,12 @@
 ﻿namespace CharityEventApp.Models
 {
-    public class CheckoutRequest
+    public class TransactionDto
     {
-        public List<CartItem> Items { get; set; }
         public decimal CashPaid { get; set; }
+        public List<TransactionItemDto> Items { get; set; } = new();
     }
 
-    public class CartItem
+    public class TransactionItemDto
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }

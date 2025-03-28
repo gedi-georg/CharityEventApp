@@ -7,5 +7,17 @@ namespace CharityEventApp.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<TransactionItem> TransactionItems { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TransactionItem>()
+                .HasOne(ti => ti.Transaction)
+                .WithMany(t => t.TransactionItems)
+                .HasForeignKey(ti => ti.TransactionId);
+        }
+
     }
 }

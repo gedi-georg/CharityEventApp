@@ -10,6 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\images\apple-tart.jpg" />
+    <Content Remove="wwwroot\images\brownie.jpg" />
+    <Content Remove="wwwroot\images\cake-pop.jpg" />
+    <Content Remove="wwwroot\images\jacket.jpg" />
+    <Content Remove="wwwroot\images\muffin.jpg" />
+    <Content Remove="wwwroot\images\pants.jpg" />
+    <Content Remove="wwwroot\images\shirt.jpg" />
+    <Content Remove="wwwroot\images\toy.jpg" />
+    <Content Remove="wwwroot\images\water.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -17,6 +29,18 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\apple-tart.jpg" />
+    <None Include="wwwroot\images\brownie.jpg" />
+    <None Include="wwwroot\images\cake-pop.jpg" />
+    <None Include="wwwroot\images\jacket.jpg" />
+    <None Include="wwwroot\images\muffin.jpg" />
+    <None Include="wwwroot\images\pants.jpg" />
+    <None Include="wwwroot\images\shirt.jpg" />
+    <None Include="wwwroot\images\toy.jpg" />
+    <None Include="wwwroot\images\water.jpg" />
   </ItemGroup>
 
 </Project>

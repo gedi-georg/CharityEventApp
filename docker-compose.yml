@@ -16,7 +16,7 @@ services:
   app:
     build:
       context: .
-    container_name: charity_app
+    container_name: charity_event_app
     environment:
       DB_HOST: db
       ASPNETCORE_ENVIRONMENT: Development

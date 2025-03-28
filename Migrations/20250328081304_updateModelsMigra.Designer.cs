@@ -3,6 +3,7 @@ using System;
 using CharityEventApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CharityEventApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250328081304_updateModelsMigra")]
+    partial class updateModelsMigra
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +52,7 @@ namespace CharityEventApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("CharityEventApp.Models.Transaction", b =>
@@ -74,7 +77,7 @@ namespace CharityEventApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Transactions", (string)null);
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("CharityEventApp.Models.TransactionItem", b =>
@@ -103,7 +106,7 @@ namespace CharityEventApp.Migrations
 
                     b.HasIndex("TransactionId");
 
-                    b.ToTable("TransactionItems", (string)null);
+                    b.ToTable("TransactionItems");
                 });
 
             modelBuilder.Entity("CharityEventApp.Models.TransactionItem", b =>
