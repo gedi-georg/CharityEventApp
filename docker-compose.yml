@@ -1,29 +1,71 @@
-version: "3.9"
+# version: "3.9"
+
+# services:
+#   db:
+#     image: postgres:16
+#     container_name: charity_postgres
+#     environment:
+#       POSTGRES_DB: mydb
+#       POSTGRES_USER: myuser
+#       POSTGRES_PASSWORD: parool123
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+
+#   app:
+#     build:
+#       context: .
+#     container_name: charity_event_app
+#     environment:
+#       DB_HOST: db
+#       DB_PORT: 5432
+#       DB_NAME: mydb
+#       DB_USER: myuser
+#       DB_PASSWORD: parool123
+#       ASPNETCORE_ENVIRONMENT: Development
+#     ports:
+#       - "5000:80"
+#     depends_on:
+#       - db
+
+# volumes:
+#   pgdata:
+
+version: '3.8'
 
 services:
-  # db:
-  #   image: postgres:16
-  #   container_name: charity_postgres
-  #   environment:
-  #     POSTGRES_DB: mydb
-  #     POSTGRES_USER: myuser
-  #     POSTGRES_PASSWORD: parool123
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - pgdata:/var/lib/postgresql/data
+  db:
+    image: postgres:15
+    container_name: charity_postgres
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: parool123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U myuser"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
-  app:
+  backend:
     build:
       context: .
-    container_name: charity_event_app
+      dockerfile: Dockerfile
+    container_name: charity_backend
+    depends_on:
+      db:
+        condition: service_healthy
     environment:
-      DB_HOST: db
       ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=mydb;Username=myuser;Password=parool123
     ports:
-      - "5000:80"
-    # depends_on:
-    #   - db
+      - "8080:8080"
 
 volumes:
   pgdata:

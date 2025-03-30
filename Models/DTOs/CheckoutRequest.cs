@@ -3,11 +3,11 @@
     public class CheckoutRequest
     {
         public decimal CashPaid { get; set; }
-        public List<CartItem> Items { get; set; }
+        public List<CheckoutItem> Items { get; set; }
         public string SessionId { get; set; } = "";
     }
 
-    public class CartItem
+    public class CheckoutItem
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }
