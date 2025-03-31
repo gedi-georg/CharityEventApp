@@ -57,6 +57,16 @@ Component & Use case diagrams
 ## Nõuded
 Nõuded täidetud koos boonusega - lugeda tooted andmebaasi failist.
 
+Kuidas sai lahendatud mitme kasutja probleem?
+
+Iga kassa kasutab oma unikaalset sessionId, sellega tagan, et toote lisamine ostukorvi toimub ainult ühe tehingu piires. Kui toode on juba ostukorvis, siis lihtsalt suurendatakse kogust, mitte ei lisata uut toodet.
+
+Laoseisu uuendatakse pärast toote lisamist ostukorvi, vältides olukorda, kus mitmed kassad saaksid sama toote korraga osta. Seega sessionId kaudu on tagatud, et iga kassa saab hallata ainult oma ostukorvi.
+
+Kui ostukorv tühistatakse, siis uuendatakse laoseisu ehk suurendatakse toote laoseisu vastavalt ostukorvile.
+
+Ostukorvil on olemas kolm staatust - töös, täidetud ja tühistatud. Esimese toote lisamisel tehakse transaction objekt, mis on töös staatuses.
+
 ---
 
 ## Testimine - Mocks
